@@ -1,0 +1,118 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="SHORTCUT ICON" href="img/logo.svg" type="image/svg"> -->
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <script>
+        if(localStorage.getItem('theme') == 'dark') {
+            document.querySelector('body').classList.add('_dark-theme');
+        }
+    </script>
+    <div class="offset-check-js"></div>
+    <header class="header">
+        <div class="header__container _container">
+            <a href="#" class="header__logo">
+                <img src="img/light-min-logo.svg" alt="" width="34" class="header__logo--img logo__light">
+                <img src="img/dark-min-logo.svg" alt="" width="34" class="header__logo--img logo__dark">
+            </a>
+            <nav class="header__nav">
+                <div class="header__nav--body">
+                    <div class="header__nav--search header__search">
+                        <form action="#" class="header__search--form">
+                            <label class="header__search--label">
+                                <input type="text" name="search" placeholder="Search" class="header__search--input _input">
+                            </label>
+                            <button class="header__search--submit _icon-search" title="Search" type="submit"></button>
+                        </form>
+                    </div>
+                    <ul class="header__nav--list">
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link _nav-btn _btn-to-scroll">
+                                Promotion
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link _nav-btn _alt _btn-open-popup">
+                                Add Coin
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link _nav-btn _alt _btn-open-popup">
+                                Add NFT
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="header__nav--account header__account">
+                        <a href="#" class="header__account--sign-in header__account--btn _btn">
+                            Sign in
+                        </a>
+                    </div>
+                    <div class="header__nav--theme header__theme">
+                        <button type="button" class="header__theme--btn _icon-dark-theme _light-theme _btn _min _theme-btn"></button>
+                        <script>
+                            if(localStorage.getItem('theme') == 'dark') {
+                                let themeBtn = document.querySelector('._theme-btn');
+                    
+                                if(themeBtn) {
+                                    themeBtn.classList.remove('_light-theme');
+                                    themeBtn.classList.remove('_icon-dark-theme');
+                                    themeBtn.classList.add('_dark-theme');
+                                    themeBtn.classList.add('_icon-light-theme');
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+            </nav>
+            <button class="header__burger _burger" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+
+    <div class="wrapper">
+        <section class="home-intro">
+            <div class="home-intro__container _container">
+                <!-- .intro__ -->
+            </div>
+        </section>
+    </div>
+
+        <footer class="footer">
+        <div class="footer__container _container">
+            <div class="footer__row">
+                <a href="#" class="footer__logo">
+                    <img src="img/light-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__light">
+                    <img src="img/dark-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__dark">
+                </a>
+                <nav class="footer__nav">
+                    <ul class="footer__nav--list">
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link _nav-btn _btn-to-scroll">
+                                LINK
+                            </a>
+                        </li>
+                        <li class="footer__nav--item">
+                            <a href="#" class="footer__nav--link _nav-btn _alt _btn-open-popup">
+                                LINK
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
