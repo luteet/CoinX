@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="SHORTCUT ICON" href="img/logo.svg" type="image/svg"> -->
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <script>
+        if(localStorage.getItem('theme') == 'dark') {
+            document.querySelector('body').classList.add('_dark-theme');
+        }
+    </script>
+    <div class="offset-check-js"></div>
+    <header class="header">
+        <div class="header__container _container">
+            <a href="#" class="header__logo">
+                <img src="img/light-min-logo.svg" alt="" width="34" class="header__logo--img logo__light">
+                <img src="img/dark-min-logo.svg" alt="" width="34" class="header__logo--img logo__dark">
+            </a>
+            <nav class="header__nav">
+                <div class="header__nav--body">
+                    <div class="header__nav--search header__search">
+                        <form action="#" class="header__search--form">
+                            <label class="header__search--label">
+                                <input type="text" name="search" placeholder="Search" class="header__search--input _input">
+                            </label>
+                            <button class="header__search--submit _icon-search" title="Search" type="submit"></button>
+                        </form>
+                    </div>
+                    <ul class="header__nav--list">
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link _nav-btn _btn-to-scroll">
+                                Promotion
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link _nav-btn _alt _btn-open-popup">
+                                Add Coin
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link _nav-btn _alt _btn-open-popup">
+                                Add NFT
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="header__nav--account header__account">
+                        <a href="#" class="header__account--sign-in header__account--btn _btn">
+                            Sign in
+                        </a>
+                    </div>
+                    <div class="header__nav--theme header__theme">
+                        <button type="button" class="header__theme--btn _icon-dark-theme _light-theme _btn _min _theme-btn"></button>
+                        <script>
+                            if(localStorage.getItem('theme') == 'dark') {
+                                let themeBtn = document.querySelector('._theme-btn');
+                    
+                                if(themeBtn) {
+                                    themeBtn.classList.remove('_light-theme');
+                                    themeBtn.classList.remove('_icon-dark-theme');
+                                    themeBtn.classList.add('_dark-theme');
+                                    themeBtn.classList.add('_icon-light-theme');
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+            </nav>
+            <button class="header__burger _burger" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+
+<div class="wrapper">
+    
+</div>
+
+    <footer class="footer">
+        <div class="footer__container _container">
+            <a href="#" class="footer__logo">
+                <img src="img/light-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__light">
+                <img src="img/dark-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__dark">
+            </a>
+            <nav class="footer__nav">
+                <ul class="footer__nav--list">
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Disclaimer
+                        </a>
+                    </li>
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Terms & conditions
+                        </a>
+                    </li>
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Coins Index
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__nav--social-list">
+                    <li class="footer__nav--social-item">
+                        <a href="#" class="footer__nav--social-link _btn _gray" title="Telegram">
+                            <svg viewBox="0 0 21 18">
+                                <path d="M18.6651 0.717064L0.935095 7.55406C-0.274905 8.04006 -0.267905 8.71506 0.713095 9.01606L5.26509 10.4361L15.7971 3.79106C16.2951 3.48806 16.7501 3.65106 16.3761 3.98306L7.8431 11.6841H7.84109L7.8431 11.6851L7.5291 16.3771C7.9891 16.3771 8.19209 16.1661 8.45009 15.9171L10.6611 13.7671L15.2601 17.1641C16.1081 17.6311 16.7171 17.3911 16.9281 16.3791L19.9471 2.15106C20.2561 0.912064 19.4741 0.351064 18.6651 0.717064Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__nav--social-item">
+                        <a href="#" class="footer__nav--social-link _btn _gray" title="Twitter">
+                            <svg viewBox="0 0 24 20">
+                                <path d="M23.4559 2.44298C23.0789 2.61021 22.6912 2.75134 22.2951 2.86593C22.7641 2.3356 23.1216 1.7116 23.3398 1.02876C23.3888 0.875706 23.3381 0.70817 23.2122 0.608067C23.0866 0.507887 22.912 0.495887 22.7737 0.577874C21.9325 1.07676 21.025 1.43529 20.0734 1.64494C19.1149 0.708325 17.813 0.175293 16.4672 0.175293C13.6263 0.175293 11.315 2.48649 11.315 5.32732C11.315 5.55106 11.3292 5.77356 11.3572 5.99297C7.8319 5.68345 4.5545 3.95073 2.30393 1.19003C2.22372 1.09163 2.10016 1.0386 1.97365 1.04874C1.84707 1.05865 1.73335 1.13003 1.6694 1.23973C1.21293 2.02298 0.971617 2.9188 0.971617 3.83026C0.971617 5.07168 1.41484 6.24954 2.19778 7.1699C1.95972 7.08745 1.7287 6.9844 1.50821 6.862C1.38984 6.79612 1.24537 6.79713 1.12777 6.86456C1.01009 6.93199 0.936314 7.05602 0.933217 7.19158C0.932675 7.21442 0.932675 7.23726 0.932675 7.2604C0.932675 9.11344 1.92999 10.7817 3.45476 11.691C3.32377 11.678 3.19285 11.659 3.06279 11.6341C2.9287 11.6085 2.79082 11.6555 2.70039 11.7578C2.60981 11.86 2.57985 12.0024 2.62158 12.1325C3.18596 13.8945 4.63905 15.1906 6.39569 15.5858C4.93874 16.4983 3.2726 16.9763 1.52354 16.9763C1.15858 16.9763 0.791539 16.9549 0.432314 16.9124C0.253862 16.8911 0.0832303 16.9965 0.0224561 17.1662C-0.038318 17.336 0.0260948 17.5253 0.177914 17.6226C2.42485 19.0633 5.02297 19.8248 7.69123 19.8248C12.9367 19.8248 16.2181 17.3512 18.0471 15.2762C20.3279 12.6887 21.636 9.26394 21.636 5.88002C21.636 5.73865 21.6338 5.59589 21.6295 5.45359C22.5293 4.77563 23.3041 3.95514 23.9345 3.01209C24.0303 2.86887 24.0199 2.67958 23.9089 2.54773C23.7982 2.41581 23.6135 2.37315 23.4559 2.44298Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__copy">
+                CoinX © 2022 - <a href="mailto:contact@coinx.com" class="footer__copy--link">contact@coinx.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>
