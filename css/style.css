@@ -2112,6 +2112,51 @@ input[type=date]::-webkit-inner-spin-button {
   color: var(--accent);
 }
 
+._drop-down {
+  position: relative;
+}
+
+._drop-down._active ._drop-down-list {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+._drop-down._active ._drop-down-list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  background-color: transparent;
+}
+
+._drop-down-current {
+  cursor: pointer;
+}
+
+._drop-down-list {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 120px;
+  background-color: var(--accent);
+  border-radius: 0 0 var(--br) var(--br);
+  padding: 10px;
+  -webkit-transform: scaleY(0.7);
+          transform: scaleY(0.7);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
 .header {
   position: absolute;
   left: 0;
@@ -2282,6 +2327,71 @@ input[type=date]::-webkit-inner-spin-button {
   text-align: center;
   min-width: 120px;
   font-size: 0.875rem;
+}
+
+.header__account._active .header__account--current-btn {
+  border-radius: var(--br) var(--br) 0 0;
+}
+
+.header__account._active .header__account--current-btn::after {
+  -webkit-transform: translate(0, -50%) scale(-1);
+          transform: translate(0, -50%) scale(-1);
+}
+
+.header__account--current-btn {
+  text-align: left;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 10px;
+  border-radius: var(--br);
+  width: 120px;
+  position: relative;
+  -webkit-transition: border-radius 0.2s ease-in-out;
+  transition: border-radius 0.2s ease-in-out;
+}
+
+.header__account--current-btn::after {
+  content: "\e905";
+  font-family: "CoinX-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) scale(1);
+          transform: translate(0, -50%) scale(1);
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.header__account--list {
+  background-color: var(--accent);
+}
+
+.header__account--link {
+  display: block;
+  padding: 10px;
+  background-color: var(--accent);
+  border-radius: var(--br);
+  color: var(--white);
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.header__account--link:hover {
+  color: var(--accent);
+  background-color: var(--white);
 }
 
 .header__theme {
@@ -2677,6 +2787,67 @@ input[type=date]::-webkit-inner-spin-button {
 
 .nft-image__social--label {
   width: 100%;
+}
+
+.login__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login__block {
+  padding: 100px 0 70px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.login__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 135%;
+}
+
+.login__text {
+  font-size: 1.25rem;
+  line-height: 135%;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.login__link {
+  margin-top: 37px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 420px;
+  width: 100%;
+}
+
+.login__link._gray {
+  padding: 20px;
+  font-weight: 500;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login__link svg {
+  margin-right: 15px;
+}
+
+.login__link--text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .comments__list {
@@ -3079,6 +3250,26 @@ input[type=date]::-webkit-inner-spin-button {
 }
 
 @media (min-width: 426px) {
+  .login__block {
+    padding: 240px 0 100px 0;
+  }
+
+  .login__title {
+    font-size: 3rem;
+  }
+
+  .login__text {
+    font-size: 1.5rem;
+  }
+
+  .login__link {
+    margin-top: 67px;
+  }
+
+  .login__link._gray {
+    padding: 27px 50px;
+  }
+
   .footer__nav--list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -3410,7 +3601,7 @@ input[type=date]::-webkit-inner-spin-button {
 
   .header__account {
     padding-top: 0px;
-    padding-left: 20px;
+    margin-left: 20px;
   }
 
   .header__theme {

@@ -123,6 +123,31 @@ body.addEventListener('click', function (event) {
   }
 
 
+  let dropDownCurrent = thisTarget.closest('._drop-down-current'),
+    dropDownParent = (dropDownCurrent) ? dropDownCurrent.closest('._drop-down') : false;
+    
+  if (dropDownCurrent) {
+    let click = true;
+    if (dropDownParent.classList.contains('_active') && click) {
+      dropDownParent.classList.remove('_active');
+      click = false;
+    }
+
+    if (!dropDownParent.classList.contains('_active') && click) {
+        dropDownParent.classList.add('_active');
+        click = false;
+    } 
+
+
+  } else if (!thisTarget.closest('._drop-down')) {
+
+      document.querySelectorAll('._drop-down').forEach(element => {
+          element.classList.remove('_active');
+      })
+
+  }
+
+
 })
 
 
