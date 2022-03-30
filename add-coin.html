@@ -80,7 +80,128 @@
 
 
 <div class="wrapper">
-    
+    <section class="add-coin">
+        <div class="add-coin__container _container">
+            <div class="add-coin__page-address page-address">
+    <ul class="page-address__list">
+        <li class="page-address__item">
+            <a href="#" class="page-address__link">
+                Home
+            </a>
+        </li>
+        <li class="page-address__item">
+            <a href="#" class="page-address__link">
+                Add Coin
+            </a>
+        </li>
+    </ul>
+</div>
+            <h2 class="add-coin__section-title _section-title _section-pb">
+                Coin listing request
+            </h2>
+            <form action="#" class="add-coin__form form-info _section-pt _border-top">
+                <div class="form-info__col">
+                    <fieldset class="form-info__fieldset">
+                        <legend class="form-info__legend _title">
+                            Coin informations
+                        </legend>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name _required">Name</span>
+                            <input type="text" name="name" placeholder="Bitcoin" required class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name _required">Symbol</span>
+                            <input type="text" name="symbol" placeholder="BTC" required class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name _required">Description</span>
+                            <textarea name="description" rows="10" placeholder="Bitcoin is a decentrlized digital currency" class="form-info__textarea _textarea"></textarea>
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Logo</span>
+                            <input type="text" name="logo" placeholder="https://i.ibb.co/logo.png" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Market Cap</span>
+                            <input type="text" name="Market Cap" placeholder="$150000" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name _required">Launch Date</span>
+                            <input type="date" name="calendar" placeholder="DD/MM/YYYY" required class="form-info__input _input">
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-info__fieldset">
+                        <legend class="form-info__legend _title">
+                            Listing requirements
+                        </legend>
+                        <ul class="form-info__list">
+                            <li class="form-info__li">Valid contract address</li>
+                            <li class="form-info__li">Working website where we can check the contract address</li>
+                            <li class="form-info__li">Locked liquidity</li>
+                            <li class="form-info__li">Reasonable holding of supply</li>
+                        </ul>
+                        <div class="form-info__checkbox _custome-checkbox-parent">
+                            <input type="checkbox" id="coin-presale" name="presale" class="form-info__checkbox--input _custome-checkbox-input">
+                            <label for="coin-presale" class="form-info__checkbox--label _custome-checkbox-label _checkbox-style">
+                                <b>Presale</b>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-info__col">
+                    <fieldset class="form-info__fieldset">
+                        <legend class="form-info__legend _title">
+                            Coin contracts
+                        </legend>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Binance Smart Chain</span>
+                            <input type="text" name="binance-smart-chain" placeholder="0x000000000000000000000" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Ethereum</span>
+                            <input type="text" name="ethereum" placeholder="0x000000000000000000000" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Polygon</span>
+                            <input type="text" name="polygon" placeholder="0x000000000000000000000" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Solana</span>
+                            <input type="text" name="solana" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxx" class="form-info__input _input">
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-info__fieldset">
+                        <legend class="form-info__legend _title">
+                            Coin links
+                        </legend>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name _required">Website</span>
+                            <input type="text" name="logo" required placeholder="https://www.bitcoin.com" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Telegram</span>
+                            <input type="text" name="telegram" placeholder="https://t.me/bitcoin" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Twitter</span>
+                            <input type="text" name="twitter" placeholder="https://twitter.com/bitcoin" class="form-info__input _input">
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-info__fieldset">
+                        <legend class="form-info__legend _title">
+                            Additional informations
+                        </legend>
+                        <label class="form-info__label">
+                            <textarea name="add-info" rows="10" placeholder="Other links, other blockchain contracts or anything else you would like to add to your coin request" class="form-info__textarea _textarea"></textarea>
+                        </label>
+                    </fieldset>
+                </div>
+                <button class="form-info__submit _start _btn">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
 </div>
 
     <footer class="footer">

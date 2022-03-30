@@ -800,7 +800,7 @@ template {
 
 @font-face {
   font-family: "CoinX-icons";
-  src: url("CoinX-icons.ttf?3p1tct") format("truetype"), url("CoinX-icons.woff?3p1tct") format("woff"), url("CoinX-icons.svg?3p1tct#CoinX-icons") format("svg");
+  src: url("CoinX-icons.ttf?oebe04") format("truetype"), url("CoinX-icons.woff?oebe04") format("woff"), url("CoinX-icons.svg?oebe04#CoinX-icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -831,6 +831,10 @@ template {
 
 ._icon-light-theme::before {
   content: "\e901";
+}
+
+._icon-calendar::before {
+  content: "\e90d";
 }
 
 ._icon-attention::before {
@@ -882,6 +886,7 @@ body {
 body {
   font-family: var(--main-font);
   background-color: var(--page-bg);
+  color: var(--dark);
   font-weight: 400;
   line-height: 150%;
   display: -webkit-box;
@@ -924,6 +929,10 @@ body._dark-theme .logo__light {
 
 body._dark-theme .logo__dark {
   display: block;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20'%3E%3Cpath d='M14.5706 2.21477V0H12.3559V2.21477H5.64447V0H3.4297V2.21477H0.141113V20H17.8592V2.21477H14.5706ZM11.1951 16.6152L9.02246 15.4728L6.84991 16.6152L7.2648 14.1958L5.50715 12.4824L7.93621 12.1295L9.02252 9.92839L10.1089 12.1295L12.538 12.4824L10.7802 14.1958L11.1951 16.6152ZM1.21494 3.28859H3.4297V4.42953H5.64447V3.28859H12.3559V4.42953H14.5706V3.28859H16.7854V6.6443H1.21494V3.28859Z' fill='%23758393'/%3E%3C/svg%3E%0A");
 }
 
 a {
@@ -1221,67 +1230,81 @@ a {
   text-align: center;
 }
 
-._input {
+._fw-semibold {
+  font-weight: 600;
+}
+
+._input,
+._textarea {
   color: var(--dark-gray);
   background-color: var(--light);
   border: 1px solid var(--light);
   border-radius: var(--br);
   padding: 9px 20px;
-  -webkit-transition: border 0.2s ease-in-out;
-  transition: border 0.2s ease-in-out;
+  -webkit-transition: border 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out, background 0.2s ease-in-out;
+  resize: none;
 }
 
-._input:hover {
+._input:hover,
+._textarea:hover {
   border: 1px solid var(--dark-gray);
 }
 
-._input::-webkit-input-placeholder {
+._input::-webkit-input-placeholder, ._textarea::-webkit-input-placeholder {
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-._input::-moz-placeholder {
+._input::-moz-placeholder, ._textarea::-moz-placeholder {
   -moz-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-._input:-ms-input-placeholder {
+._input:-ms-input-placeholder, ._textarea:-ms-input-placeholder {
   -ms-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-._input::-ms-input-placeholder {
+._input::-ms-input-placeholder, ._textarea::-ms-input-placeholder {
   -ms-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-._input::placeholder {
+._input::placeholder,
+._textarea::placeholder {
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
-._input:focus {
+._input:focus,
+._textarea:focus {
   border: 1px solid var(--dark-gray);
 }
 
-._input:focus::-webkit-input-placeholder {
+._input:focus::-webkit-input-placeholder, ._textarea:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
-._input:focus::-moz-placeholder {
+._input:focus::-moz-placeholder, ._textarea:focus::-moz-placeholder {
   opacity: 0;
 }
 
-._input:focus:-ms-input-placeholder {
+._input:focus:-ms-input-placeholder, ._textarea:focus:-ms-input-placeholder {
   opacity: 0;
 }
 
-._input:focus::-ms-input-placeholder {
+._input:focus::-ms-input-placeholder, ._textarea:focus::-ms-input-placeholder {
   opacity: 0;
 }
 
-._input:focus::placeholder {
+._input:focus::placeholder,
+._textarea:focus::placeholder {
   opacity: 0;
+}
+
+._textarea {
+  padding: 16px 18px;
 }
 
 ._select {
@@ -1410,6 +1433,38 @@ a {
   border-radius: 0 0 var(--br-3) var(--br-3);
 }
 
+._checkbox-style {
+  position: relative;
+  padding-left: 40px;
+}
+
+._checkbox-style::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--dark);
+}
+
+._checkbox-style::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 405.272 405.272'%3E%3Cg%3E%3Cpath d='M393.401,124.425L179.603,338.208c-15.832,15.835-41.514,15.835-57.361,0L11.878,227.836 c-15.838-15.835-15.838-41.52,0-57.358c15.841-15.841,41.521-15.841,57.355-0.006l81.698,81.699L336.037,67.064 c15.841-15.841,41.523-15.829,57.358,0C409.23,82.902,409.23,108.578,393.401,124.425z' fill='%23FFF'/%3E%3C/g%3E%3C/svg%3E") center/75% no-repeat;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
 ._custome-checkbox-parent {
   position: relative;
 }
@@ -1432,8 +1487,135 @@ a {
   color: var(--red);
 }
 
+._custome-checkbox-input:checked + ._custome-checkbox-label._checkbox-style::after {
+  opacity: 1;
+}
+
 ._custome-checkbox-label {
   cursor: pointer;
+}
+
+._required::after {
+  content: " *";
+  color: var(--red);
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.form-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+}
+
+.form-info__col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.form-info__col:not(:first-child) {
+  padding-top: 50px;
+}
+
+.form-info__fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+}
+
+.form-info__fieldset:not(:first-child) {
+  margin-top: 40px;
+}
+
+.form-info__legend {
+  padding-bottom: 20px;
+}
+
+.form-info__label {
+  width: 100%;
+  padding: 12px 0;
+  /* @include _768 {
+      padding-right: 30px;
+  } */
+}
+
+.form-info__label-name {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 120%;
+  padding-bottom: 11px;
+}
+
+.form-info__input,
+.form-info__textarea {
+  width: 100%;
+  padding: 15px 18px;
+  color: var(--dark);
+  font-size: 0.875rem;
+}
+
+.form-info__input::-webkit-input-placeholder, .form-info__textarea::-webkit-input-placeholder {
+  color: var(--dark-gray);
+}
+
+.form-info__input::-moz-placeholder, .form-info__textarea::-moz-placeholder {
+  color: var(--dark-gray);
+}
+
+.form-info__input:-ms-input-placeholder, .form-info__textarea:-ms-input-placeholder {
+  color: var(--dark-gray);
+}
+
+.form-info__input::-ms-input-placeholder, .form-info__textarea::-ms-input-placeholder {
+  color: var(--dark-gray);
+}
+
+.form-info__input::placeholder,
+.form-info__textarea::placeholder {
+  color: var(--dark-gray);
+}
+
+.form-info__textarea {
+  line-height: 150%;
+}
+
+.form-info__li {
+  color: var(--dark-gray);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.875rem;
+  padding: 6px 0;
+}
+
+.form-info__li::before {
+  content: "•";
+  padding-right: 10px;
+  font-size: 1.7rem;
+}
+
+.form-info__checkbox {
+  padding-top: 20px;
+}
+
+.form-info__submit {
+  margin-top: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 20px;
 }
 
 .card-list {
@@ -1989,8 +2171,8 @@ a {
   overflow: auto;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, background 0.2s ease-in-out;
 }
 
 .header__nav._active {
@@ -2153,71 +2335,74 @@ a {
   padding-top: 39px;
 }
 
-.coin-presale__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.coin-presale__avatar {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-}
-
-.coin-presale__info {
-  margin-top: 30px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-}
-
 .coin-presale__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   /* padding-bottom: 30px; */
-}
-
-.coin-presale__header--col {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-}
-
-.coin-presale__header--row {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.coin-presale__header--row._start {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
 }
 
 .coin-presale__descr {
   font-weight: 600;
   color: var(--dark);
+}
+
+.coin-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.coin-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.coin-header-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.coin-header-row {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.coin-header-row._start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.coin-header-row > * {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.coin-info {
+  margin-top: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 
 .coin-avatar {
@@ -2231,6 +2416,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 
 .coin-avatar__image--img {
@@ -2246,13 +2434,16 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .coin-avatar__social--item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
-  padding: 14px;
+      -ms-flex: 0 1 calc(50% - 14px);
+          flex: 0 1 calc(50% - 14px);
+  padding: 14px 0;
 }
 
 .coin-avatar__social--label {
@@ -2348,13 +2539,144 @@ a {
   text-align: right;
 }
 
-.coin-launch-date__legend {
+.coin-launch-date__time {
+  color: var(--dark);
+}
+
+.coin-list {
+  width: 100%;
+}
+
+.coin-list__title {
+  padding-top: 20px;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.coin-list__ul {
+  padding-top: 20px;
+}
+
+.coin-list__item--body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: var(--dark);
+  padding: 10px;
+  border-radius: var(--br-2);
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+
+.coin-list__item--body:hover {
+  background-color: var(--light);
+}
+
+.coin-list__item--body:hover .coin-list__item--buy-btn {
+  background-color: var(--dark-gray);
+  color: var(--light);
+}
+
+.coin-list__item--logo {
+  padding: 5px;
+}
+
+.coin-list__item--img {
+  max-width: 45px;
+  width: 100%;
+}
+
+.coin-list__item--name {
+  padding: 5px;
+  display: inline-block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.coin-list__item--buy-btn {
+  margin: 10px 5px;
+  padding: 12px 22px;
+  border-radius: var(--br-2);
+  color: var(--dark-gray);
+  background-color: var(--light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 130%;
+  text-align: center;
+  -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  width: 100%;
+}
+
+.coin-min-legend {
   color: var(--dark-gray);
   display: block;
 }
 
-.coin-launch-date__time {
-  color: var(--dark);
+.coin-price__procent {
+  color: var(--green);
+}
+
+.nft-open__descr {
+  color: var(--dark-gray);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nft-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.nft-image__img {
+  max-width: 100%;
+  border-radius: var(--br-3);
+}
+
+.nft-image__social {
+  padding-top: 28px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nft-image__social--item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 14px);
+          flex: 0 1 calc(50% - 14px);
+  padding: 14px 0;
+}
+
+.nft-image__social--label {
+  width: 100%;
 }
 
 .comments__list {
@@ -2443,7 +2765,7 @@ a {
 }
 
 .comments__write-message {
-  padding-top: 30px;
+  padding-top: 20px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
@@ -2542,7 +2864,7 @@ a {
 }
 
 .comments__message {
-  padding-top: 30px;
+  padding-top: 20px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
@@ -2750,6 +3072,12 @@ a {
   color: var(--dark-gray);
 }
 
+@media (min-width: 360px) {
+  .coin-list__item--buy-btn {
+    width: auto;
+  }
+}
+
 @media (min-width: 426px) {
   .footer__nav--list {
     -webkit-box-orient: horizontal;
@@ -2847,6 +3175,41 @@ a {
 
   ._title._large {
     font-size: 1.25rem;
+  }
+
+  .form-info {
+    -ms-grid-columns: 50% 50%;
+    grid-template-columns: 50% 50%;
+  }
+
+  .form-info__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+
+  .form-info__col:not(:first-child) {
+    padding-top: 0;
+  }
+
+  .form-info__fieldset {
+    max-width: calc(100% - 30px);
+  }
+
+  .form-info__submit {
+    max-width: 60%;
+    font-size: 1.125rem;
+    padding: 27px;
+  }
+
+  .form-info__submit._start {
+    -ms-grid-column: 1;
+    grid-column: 1/1;
+  }
+
+  .form-info__submit._end {
+    -ms-grid-column: 2;
+    grid-column: 2/2;
   }
 
   .card-item {
@@ -3055,17 +3418,31 @@ a {
     padding-left: 40px;
   }
 
-  .coin-presale__avatar {
+  .coin-info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 70%;
+            flex: 0 1 70%;
+    margin-top: 0px;
+  }
+
+  .coin-avatar {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(30% - 30px);
             flex: 0 1 calc(30% - 30px);
   }
 
-  .coin-presale__info {
+  .coin-list__item--buy-btn {
+    width: 100%;
+  }
+
+  .nft-open__descr {
+    font-size: 1.125rem;
+  }
+
+  .nft-image {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 70%;
-            flex: 0 1 70%;
-    margin-top: 0px;
+        -ms-flex: 0 1 calc(30% - 30px);
+            flex: 0 1 calc(30% - 30px);
   }
 
   .comments__write-message--textarea {
@@ -3107,6 +3484,12 @@ a {
   }
 }
 
+@media (min-width: 1100px) {
+  .form-info__fieldset {
+    max-width: calc(64.305% - 30px);
+  }
+}
+
 @media (min-width: 1200px) {
   .coin-table-col-1 {
     width: 35%;
@@ -3119,13 +3502,23 @@ a {
   .header__search {
     padding: 0 20px 0 50px;
   }
+
+  .coin-list__item--buy-btn {
+    width: auto;
+  }
 }
 
 @media (min-width: 1400px) {
-  .coin-presale__avatar {
+  .coin-avatar {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 20%;
-            flex: 0 1 20%;
+        -ms-flex: 0 1 24%;
+            flex: 0 1 24%;
+  }
+
+  .nft-image {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 24%;
+            flex: 0 1 24%;
   }
 
   .comments__item--user {
