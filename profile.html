@@ -47,10 +47,29 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="header__nav--account header__account">
-                        <a href="#" class="header__account--sign-in header__account--btn _btn">
-                            Sign in
-                        </a>
+                    <div class="header__nav--account header__account _drop-down">
+                        <div class="header__account--current header__lang--item">
+                            <button class="header__account--current-btn _drop-down-current">
+                                Account
+                            </button>
+                        </div>
+                        <ul class="header__account--list _drop-down-list">
+                            <li class="header__account--item">
+                                <a href="#" class="header__account--link">
+                                    My Profile
+                                </a>
+                            </li>
+                            <li class="header__account--item">
+                                <a href="#" class="header__account--link">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li class="header__account--item">
+                                <a href="#" class="header__account--link">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="header__nav--theme header__theme">
                         <button type="button" class="header__theme--btn _icon-dark-theme _light-theme _btn _min _theme-btn"></button>
@@ -80,67 +99,82 @@
 
 
 <div class="wrapper">
-    <section class="promotion">
-        <div class="promotion__container _container">
-            <div class="promotion__block">
-                <h2 class="promotion__title _section-title _txt-center _min-pb">
-                    Promote your Coin or NFT
-                </h2>
-                <div class="promotion__statistic _section-pt">
-                    <div class="promotion__statistic--body">
-                        <div class="promotion__statistic--item">
-                            <h3 class="promotion__statistic--item-title">
-                                Average daily users
-                            </h3>
-                            <span class="promotion__statistic--item-value">
-                                100 000
-                            </span>
+    <section class="profile">
+        <div class="profile__container _container">
+            <div class="profile__page-address page-address">
+    <ul class="page-address__list">
+        <li class="page-address__item">
+            <a href="#" class="page-address__link">
+                Home
+            </a>
+        </li>
+        <li class="page-address__item">
+            <a href="#" class="page-address__link">
+                Account
+            </a>
+        </li>
+        <li class="page-address__item">
+            <a href="#" class="page-address__link">
+                My profile
+            </a>
+        </li>
+    </ul>
+</div>
+            <h2 class="profile__section-title _section-title _section-pb">
+                NFT collection listing request
+            </h2>
+            <form action="#" class="profile__form form-info _section-pt _border-top">
+                <div class="form-info__col">
+                    <fieldset class="form-info__fieldset">
+                        <div class="form-info__item">
+                            <div class="form-info__avatar">
+                                <img src="img/nft-avatars/avatar-3.jpg" width="134" height="134" loading="lazy" alt="" class="form-info__avatar--img">
+                            </div>
+                            <label class="form-info__avatar-change">
+                                <input type="file" name="avatar" required class="form-info__avatar-change--input">
+                            </label>
                         </div>
-                        <div class="promotion__statistic--item">
-                            <h3 class="promotion__statistic--item-title">
-                                Twitter followers
-                            </h3>
-                            <span class="promotion__statistic--item-value">
-                                250 000
-                            </span>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name _required">Nickname</span>
+                            <input type="text" name="nickname" placeholder="Papa Jepetto" required class="form-info__input _input">
+                        </label>
+                        <div class="profile__param user-param">
+                            <div class="user-param__item" title="144">
+                                <span class="user-param__title">Comments</span>
+                                <div class="user-param__item--body">
+                                    <span class="user-param__value">144</span>
+                                    <span class="user-param__icon _icon-comment"></span>
+                                </div>
+                            </div>
+                            <div class="user-param__item" title="10000">
+                                <span class="user-param__title">Likes</span>
+                                <div class="user-param__item--body">
+                                    <span class="user-param__value">10000</span>
+                                    <span class="user-param__icon _icon-follow"></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="promotion__statistic--item">
-                            <h3 class="promotion__statistic--item-title">
-                                Newsletter subscribers
-                            </h3>
-                            <span class="promotion__statistic--item-value">
-                                44 500
-                            </span>
-                        </div>
-                    </div>
+                    </fieldset>
                 </div>
-                <form action="#" class="promotion__form">
-                    <!-- <label class="promotion__form--label _select-label">
-                        <span class="promotion__form--label-body _select-label-wrapper">
-                            <span class="promotion__form--icon _select-icon _icon-list-arrow"></span>
-                            
-                        </span>
-                    </label> -->
-                    <div class="promotion__form--label _auto">
-                        <select name="project" class="promotion__form--select _select _alt">
-                            <option value="none" selected disabled>Choose your project</option>
-                            <option value="project-1">project-1</option>
-                            <option value="project-2">project-2</option>
-                            <option value="project-3">project-3</option>
-                            <option value="project-4">project-4</option>
-                            <option value="project-5">project-5</option>
-                            <option value="project-6">project-6</option>
-                            <option value="project-7">project-7</option>
-                            <option value="project-8">project-8</option>
-                        </select>
-                    </div>
-                    <label class="promotion__form--label">
-                        <button class="promotion__form--submit _btn" type="submit">
-                            Promote
+                <div class="form-info__col">
+                    <fieldset class="form-info__fieldset">
+                        <legend class="form-info__legend _title">
+                            Social Network
+                        </legend>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Telegram</span>
+                            <input type="text" name="telegram" placeholder="https://t.me/coinX" class="form-info__input _input">
+                        </label>
+                        <label class="form-info__label">
+                            <span class="form-info__label-name">Twitter</span>
+                            <input type="text" name="twitter" placeholder="https://twitter.com/coinX" class="form-info__input _input">
+                        </label>
+                        <button class="form-info__submit _full _btn">
+                            Save changes
                         </button>
-                    </label>
-                </form>
-            </div>
+                    </fieldset>
+                </div>
+            </form>
         </div>
     </section>
 </div>

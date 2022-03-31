@@ -59,6 +59,11 @@ select.forEach(thisElement => {
   });
 })
 
+/* new lc_select(document.querySelectorAll('._select'), {
+  enable_search: false,
+  addit_classes : ['_select-body'],
+}); */
+
 let thisTarget;
 body.addEventListener('click', function (event) {
 
@@ -148,6 +153,45 @@ body.addEventListener('click', function (event) {
   }
 
 
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- <icon active on focus select> -=-=-=-=-=-=-=-=-=-=-=-=
+  /* let selectLable = thisTarget.closest('._select-label'),
+  select = (selectLable) ? selectLable.querySelector('._select') : false;
+  if(select) {
+    let check = true;
+    if(!select.classList.contains('_focus-event') && check) {
+      event.preventDefault();
+      check=!check;
+
+      let selectIcon = select.parentNode.querySelector('._select-icon');
+      selectIcon.classList.add('_active');
+
+      select.classList.add('_focus-event');
+      
+      select.onfocus = () => {
+        selectIcon.classList.add('_active');
+        select.classList.remove('_focus-event');
+      }
+      select.onblur = () => {
+        selectIcon.classList.remove('_active');
+        select.classList.remove('_focus-event');
+      }
+    }
+
+    if(select.classList.contains('_focus-event') && check) {
+      event.preventDefault();
+      check=!check;
+
+      let selectIcon = select.parentNode.querySelector('._select-icon');
+      selectIcon.classList.remove('_active');
+
+      select.classList.remove('_focus-event');
+    }
+
+  }
+  // =-=-=-=-=-=-=-=-=-=-=-=- </icon active on focus select> -=-=-=-=-=-=-=-=-=-=-=-= */
+
+
 })
 
 
@@ -207,3 +251,8 @@ scrollPage();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </change header on scroll> -=-=-=-=-=-=-=-=-=-=-=-=
 
+document.querySelectorAll('._select').forEach(thisElement => {
+  thisElement.addEventListener('change', function() {
+    console.log('select');
+  })
+})
