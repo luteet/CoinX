@@ -2224,8 +2224,8 @@ input[type=date]::-webkit-inner-spin-button {
 ._drop-down._active ._drop-down-list {
   opacity: 1;
   visibility: visible;
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 ._drop-down._active ._drop-down-list::before {
@@ -2252,14 +2252,14 @@ input[type=date]::-webkit-inner-spin-button {
   background-color: var(--accent);
   border-radius: 0 0 var(--br) var(--br);
   padding: 10px;
-  -webkit-transform: scaleY(0.7);
-          transform: scaleY(0.7);
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.1s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.1s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.1s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
 }
 
 .header {
