@@ -16,7 +16,7 @@
     <div class="offset-check-js"></div>
     <header class="header">
         <div class="header__container _container">
-            <a href="#" class="header__logo">
+            <a href="index.html" class="header__logo">
                 <img src="img/light-min-logo.svg" alt="" width="34" class="header__logo--img logo__light">
                 <img src="img/dark-min-logo.svg" alt="" width="34" class="header__logo--img logo__dark">
             </a>
@@ -32,17 +32,17 @@
                     </div>
                     <ul class="header__nav--list">
                         <li class="header__nav--item">
-                            <a href="#" class="header__nav--link _nav-btn _btn-to-scroll">
+                            <a href="promotion.html" class="header__nav--link">
                                 Promotion
                             </a>
                         </li>
                         <li class="header__nav--item">
-                            <a href="#" class="header__nav--link _nav-btn _alt _btn-open-popup">
+                            <a href="add-coin.html" class="header__nav--link">
                                 Add Coin
                             </a>
                         </li>
                         <li class="header__nav--item">
-                            <a href="#" class="header__nav--link _nav-btn _alt _btn-open-popup">
+                            <a href="add-nft.html" class="header__nav--link">
                                 Add NFT
                             </a>
                         </li>
@@ -55,24 +55,24 @@
                         </div>
                         <ul class="header__account--list _drop-down-list">
                             <li class="header__account--item">
-                                <a href="#" class="header__account--link">
+                                <a href="profile.html" class="header__account--link">
                                     My Profile
                                 </a>
                             </li>
                             <li class="header__account--item">
-                                <a href="#" class="header__account--link">
+                                <a href="portfolio.html" class="header__account--link">
                                     Portfolio
                                 </a>
                             </li>
                             <li class="header__account--item">
-                                <a href="#" class="header__account--link">
+                                <a href="login.html" class="header__account--link">
                                     Logout
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="header__nav--theme header__theme">
-                        <button type="button" class="header__theme--btn _icon-dark-theme _light-theme _btn _min _theme-btn"></button>
+                        <button type="button" class="header__theme--btn _icon-dark-theme _light-theme _btn _min _theme-btn" title="Change theme"></button>
                         <script>
                             if(localStorage.getItem('theme') == 'dark') {
                                 let themeBtn = document.querySelector('._theme-btn');
@@ -128,7 +128,10 @@
                     <fieldset class="form-info__fieldset">
                         <div class="form-info__item">
                             <div class="form-info__avatar">
-                                <img src="img/nft-avatars/avatar-3.jpg" width="134" height="134" loading="lazy" alt="" class="form-info__avatar--img">
+                                <picture>
+                                    <source srcset="img/nft-avatars/avatar-3.webp" type="image/webp">
+                                    <img src="img/nft-avatars/avatar-3.jpg" alt="" width="134" height="134" loading="lazy" class="form-info__avatar--img">
+                                </picture>
                             </div>
                             <label class="form-info__avatar-change">
                                 <input type="file" name="avatar" required class="form-info__avatar-change--input">
@@ -181,7 +184,7 @@
 
     <footer class="footer">
         <div class="footer__container _container">
-            <a href="#" class="footer__logo">
+            <a href="index.html" class="footer__logo">
                 <img src="img/light-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__light">
                 <img src="img/dark-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__dark">
             </a>

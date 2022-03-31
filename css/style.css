@@ -2945,6 +2945,12 @@ input[type=date]::-webkit-inner-spin-button {
           justify-content: space-between;
 }
 
+.login__link._gray:active {
+  background-color: var(--accent);
+  color: var(--white);
+  fill: var(--white);
+}
+
 .login__link svg {
   margin-right: 15px;
 }
