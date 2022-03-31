@@ -1,4 +1,4 @@
-
+// =-=-=-=-=-=-=-=-=-=-=-=- <copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
 function copyToClipboard(el) {
 
   // resolve the element
@@ -43,6 +43,18 @@ function copyToClipboard(el) {
   // execute copy command
   document.execCommand('copy');
 }
+// =-=-=-=-=-=-=-=-=-=-=-=- </copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <custome select> -=-=-=-=-=-=-=-=-=-=-=-=
+const select = document.querySelectorAll('._select');
+
+select.forEach(thisElement => {
+  NiceSelect.bind(thisElement, {
+    searchable: false
+  });
+})
+// =-=-=-=-=-=-=-=-=-=-=-=- </custome select> -=-=-=-=-=-=-=-=-=-=-=-=
+
 
 const body = document.querySelector('body'),
   html = document.querySelector('html'),
@@ -51,31 +63,23 @@ const body = document.querySelector('body'),
   header = document.querySelector('.header');
 
 
-const select = document.querySelectorAll('._select');
-
-select.forEach(thisElement => {
-  NiceSelect.bind(thisElement, {
-    searchable: false
-  });
-})
-
-/* new lc_select(document.querySelectorAll('._select'), {
-  enable_search: false,
-  addit_classes : ['_select-body'],
-}); */
 
 let thisTarget;
 body.addEventListener('click', function (event) {
 
   thisTarget = event.target;
 
-  // Меню в шапке
+  // =-=-=-=-=-=-=-=-=-=-=-=- <header menu> -=-=-=-=-=-=-=-=-=-=-=-=
   if (thisTarget.closest('._burger')) {
     menu.forEach(elem => {
       elem.classList.toggle('_active')
     })
   }
+  // =-=-=-=-=-=-=-=-=-=-=-=- </header menu> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- <change theme (dark, light)> -=-=-=-=-=-=-=-=-=-=-=-=
   let themeLink = thisTarget.closest('._theme-btn');
   if (themeLink) {
     event.preventDefault();
@@ -110,9 +114,11 @@ body.addEventListener('click', function (event) {
 
     }
   }
+  // =-=-=-=-=-=-=-=-=-=-=-=- </change theme (dark, light)> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 
+  // =-=-=-=-=-=-=-=-=-=-=-=- <copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
   let copyBtn = thisTarget.closest('._copy-input-btn');
   if (copyBtn) {
     event.preventDefault();
@@ -126,8 +132,11 @@ body.addEventListener('click', function (event) {
     }
 
   }
+  // =-=-=-=-=-=-=-=-=-=-=-=- </copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- <drop-down list> -=-=-=-=-=-=-=-=-=-=-=-=
   let dropDownCurrent = thisTarget.closest('._drop-down-current'),
     dropDownParent = (dropDownCurrent) ? dropDownCurrent.closest('._drop-down') : false;
     
@@ -151,46 +160,7 @@ body.addEventListener('click', function (event) {
       })
 
   }
-
-
-
-  // =-=-=-=-=-=-=-=-=-=-=-=- <icon active on focus select> -=-=-=-=-=-=-=-=-=-=-=-=
-  /* let selectLable = thisTarget.closest('._select-label'),
-  select = (selectLable) ? selectLable.querySelector('._select') : false;
-  if(select) {
-    let check = true;
-    if(!select.classList.contains('_focus-event') && check) {
-      event.preventDefault();
-      check=!check;
-
-      let selectIcon = select.parentNode.querySelector('._select-icon');
-      selectIcon.classList.add('_active');
-
-      select.classList.add('_focus-event');
-      
-      select.onfocus = () => {
-        selectIcon.classList.add('_active');
-        select.classList.remove('_focus-event');
-      }
-      select.onblur = () => {
-        selectIcon.classList.remove('_active');
-        select.classList.remove('_focus-event');
-      }
-    }
-
-    if(select.classList.contains('_focus-event') && check) {
-      event.preventDefault();
-      check=!check;
-
-      let selectIcon = select.parentNode.querySelector('._select-icon');
-      selectIcon.classList.remove('_active');
-
-      select.classList.remove('_focus-event');
-    }
-
-  }
-  // =-=-=-=-=-=-=-=-=-=-=-=- </icon active on focus select> -=-=-=-=-=-=-=-=-=-=-=-= */
-
+  // =-=-=-=-=-=-=-=-=-=-=-=- </drop-down list> -=-=-=-=-=-=-=-=-=-=-=-=
 
 })
 
@@ -250,9 +220,3 @@ function scrollPage() {
 scrollPage();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </change header on scroll> -=-=-=-=-=-=-=-=-=-=-=-=
-
-document.querySelectorAll('._select').forEach(thisElement => {
-  thisElement.addEventListener('change', function() {
-    console.log('select');
-  })
-})
