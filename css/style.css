@@ -1789,9 +1789,7 @@ input[type=date]::-webkit-inner-spin-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  /* justify-content: space-between; */
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: -5px;
@@ -1812,7 +1810,7 @@ input[type=date]::-webkit-inner-spin-button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 6px;
+  padding: 5px;
   border-radius: var(--br-3);
   font-size: 0.625rem;
   border: 1px solid var(--light);
@@ -3630,14 +3628,14 @@ input[type=date]::-webkit-inner-spin-button {
 
 @media (min-width: 550px) {
   .card-list {
-    margin: -15px -10px;
+    margin: -15px;
   }
 
   .card-item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.333%;
             flex: 0 1 33.333%;
-    padding: 15px 10px;
+    padding: 15px;
   }
 }
 
