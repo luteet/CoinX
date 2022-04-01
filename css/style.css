@@ -1853,7 +1853,9 @@ input[type=date]::-webkit-inner-spin-button {
 }
 
 .card-item__avatar--img {
+  /* max-width: 183px; */
   width: 100%;
+  height: auto;
   border-radius: var(--br-3);
 }
 
