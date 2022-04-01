@@ -950,10 +950,10 @@ a {
 }
 
 ._container {
-  max-width: 1560px;
+  max-width: 1440px;
   padding: 0 var(--container-padding-min);
   margin: 0 auto;
-  /* max-width: 1560px; */
+  /* max-width: 1440px; */
   /* &._min {
       max-width: 1120px;
   }
@@ -1136,6 +1136,7 @@ a {
   border-radius: var(--br-2);
   text-align: center;
   padding: 12px;
+  line-height: 100%;
   -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -1158,6 +1159,11 @@ a {
           align-items: center;
 }
 
+._votes-icon {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
 ._votes-input {
   position: absolute;
   left: 50%;
@@ -1169,6 +1175,9 @@ a {
 }
 
 ._votes-label {
+  width: 82px;
+  height: 50px;
+  padding: 10px;
   position: relative;
   cursor: pointer;
 }
@@ -1178,9 +1187,18 @@ a {
   color: var(--white);
 }
 
+._votes-label:hover._active {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
 ._votes-label._active {
-  background-color: var(--accent) !important;
-  color: var(--white) !important;
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+._votes._promoted-type ._votes-label:active {
+  background-color: var(--accent-2);
 }
 
 ._profit-up {
@@ -1771,6 +1789,9 @@ input[type=date]::-webkit-inner-spin-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: -5px;
@@ -1809,8 +1830,23 @@ input[type=date]::-webkit-inner-spin-button {
   color: var(--white);
 }
 
+.card-item:hover .card-item__votes--value._active {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.card-item:active .card-item__votes--value {
+  background-color: var(--accent-2);
+  color: var(--white);
+}
+
 .card-item:hover .card-item__votes--value._alt {
   background-color: var(--accent-dark-2);
+  color: var(--white);
+}
+
+.card-item:hover .card-item__votes--value._alt._active {
+  background-color: var(--accent);
   color: var(--white);
 }
 
@@ -1851,7 +1887,9 @@ input[type=date]::-webkit-inner-spin-button {
 }
 
 .card-item__votes--value {
-  padding: 6px 20px;
+  width: 100%;
+  height: auto;
+  padding: 13px 20px;
 }
 
 .coin-table {
@@ -1931,6 +1969,11 @@ input[type=date]::-webkit-inner-spin-button {
 
 .coin-table tbody tr:hover .coin-table__votes--value._alt {
   background-color: var(--accent-2);
+  color: var(--white);
+}
+
+.coin-table tbody tr:hover .coin-table__votes--value._active {
+  background-color: var(--accent);
   color: var(--white);
 }
 
@@ -2673,14 +2716,24 @@ input[type=date]::-webkit-inner-spin-button {
           flex: 1 1 100%;
 }
 
+.coin-avatar__image {
+  position: relative;
+}
+
 .coin-avatar__image--img {
-  max-width: 100%;
+  max-width: 308px;
+  width: 100%;
+  height: auto;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* aspect-ratio: 1/1; */
 }
 
 .coin-avatar__social {
   padding-top: 28px;
   width: 100%;
+  max-width: 308px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2750,13 +2803,13 @@ input[type=date]::-webkit-inner-spin-button {
 }
 
 .coin-votes__value {
-  padding: 7px 25px;
+  /* padding: 7px 25px; */
   font-size: 0.75rem;
   font-weight: 600;
 }
 
 .coin-votes__icon {
-  padding-bottom: 3px;
+  /* padding-bottom: 3px; */
 }
 
 .coin-social__list {
@@ -2793,6 +2846,12 @@ input[type=date]::-webkit-inner-spin-button {
 
 .coin-launch-date__time {
   color: var(--dark);
+}
+
+.open-coin__descr {
+  color: var(--dark-gray);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .coin-list {
@@ -2902,14 +2961,25 @@ input[type=date]::-webkit-inner-spin-button {
           flex: 1 1 100%;
 }
 
-.nft-image__img {
+.nft-image__picture {
   max-width: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.nft-image__img {
+  max-width: 308px;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: var(--br-3);
 }
 
 .nft-image__social {
   padding-top: 28px;
   width: 100%;
+  max-width: 308px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3560,14 +3630,14 @@ input[type=date]::-webkit-inner-spin-button {
 
 @media (min-width: 550px) {
   .card-list {
-    margin: -15px;
+    margin: -15px -10px;
   }
 
   .card-item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.333%;
             flex: 0 1 33.333%;
-    padding: 15px;
+    padding: 15px 10px;
   }
 }
 
@@ -3827,8 +3897,8 @@ input[type=date]::-webkit-inner-spin-button {
 
   .card-item {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 225px;
-            flex: 0 1 225px;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
   }
 
   .coin-table__body {
@@ -3926,8 +3996,8 @@ input[type=date]::-webkit-inner-spin-button {
 
   .coin-info {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 70%;
-            flex: 0 1 70%;
+        -ms-flex: 0 1 66%;
+            flex: 0 1 66%;
     margin-top: 0px;
   }
 
@@ -3935,6 +4005,18 @@ input[type=date]::-webkit-inner-spin-button {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(30% - 30px);
             flex: 0 1 calc(30% - 30px);
+  }
+
+  .coin-avatar__image--img {
+    max-width: 100%;
+  }
+
+  .coin-avatar__social {
+    max-width: 100%;
+  }
+
+  .open-coin__descr {
+    font-size: 1.125rem;
   }
 
   .coin-list__item--buy-btn {
@@ -3949,6 +4031,14 @@ input[type=date]::-webkit-inner-spin-button {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(30% - 30px);
             flex: 0 1 calc(30% - 30px);
+  }
+
+  .nft-image__img {
+    max-width: 100%;
+  }
+
+  .nft-image__social {
+    max-width: 100%;
   }
 
   .comments__write-message--textarea {
