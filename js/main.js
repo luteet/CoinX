@@ -162,6 +162,29 @@ body.addEventListener('click', function (event) {
   }
   // =-=-=-=-=-=-=-=-=-=-=-=- </drop-down list> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- <copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+  let checkboxLabel = thisTarget.closest('._checkbox-label');
+  if (checkboxLabel) {
+    event.preventDefault();
+
+    let input = checkboxLabel.querySelector('._checkbox-input');
+
+    if (input) {
+      
+      if(input.checked) {
+        input.checked = !input.checked;
+        checkboxLabel.classList.remove('_active');
+      } else {
+        input.checked = !input.checked;
+        checkboxLabel.classList.add('_active');
+      }
+
+    }
+
+  }
+  // =-=-=-=-=-=-=-=-=-=-=-=- </copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+
 })
 
 

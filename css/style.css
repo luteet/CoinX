@@ -1100,6 +1100,24 @@ a {
   background-color: var(--accent-dark);
 }
 
+._btn:hover._gray._status-color-1 {
+  background-color: var(--light);
+  color: var(--white);
+  fill: var(--white);
+}
+
+._btn:hover._gray._status-color-2 {
+  background-color: var(--light);
+  color: var(--white);
+  fill: var(--white);
+}
+
+._btn:hover._gray._status-color-3 {
+  background-color: var(--light);
+  color: var(--white);
+  fill: var(--white);
+}
+
 ._btn:active._status-color-1 {
   color: var(--accent);
 }
@@ -1138,6 +1156,31 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+._votes-input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+._votes-label {
+  position: relative;
+  cursor: pointer;
+}
+
+._votes-label:hover {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+._votes-label._active {
+  background-color: var(--accent) !important;
+  color: var(--white) !important;
 }
 
 ._profit-up {
@@ -1974,6 +2017,10 @@ input[type=date]::-webkit-inner-spin-button {
       align-self: center;
 }
 
+.coin-table__main-info:hover .coin-table__name {
+  color: var(--accent) !important;
+}
+
 .coin-table__avatar {
   -ms-grid-column: 1;
   grid-column: 1/1;
@@ -2271,10 +2318,10 @@ input[type=date]::-webkit-inner-spin-button {
   width: 100%;
   background-color: var(--page-bg);
   border-bottom: 2px solid var(--light);
-  -webkit-transition: border 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: border 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: border 0.2s ease-in-out, -webkit-transform 0.2s ease;
+  transition: border 0.2s ease-in-out, -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease, border 0.2s ease-in-out;
+  transition: transform 0.2s ease, border 0.2s ease-in-out, -webkit-transform 0.2s ease;
   z-index: 99;
 }
 
