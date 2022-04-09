@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <script>
+        if(localStorage.getItem('theme') == 'dark') {
+            document.querySelector('body').classList.add('_dark-theme');
+        }
+    </script>
+    <div class="offset-check-js"></div>
+    <header class="header">
+        <div class="header__container _container">
+            <a href="index.html" class="header__logo">
+                <img src="img/light-min-logo.svg" alt="" width="34" class="header__logo--img logo__light">
+                <img src="img/dark-min-logo.svg" alt="" width="34" class="header__logo--img logo__dark">
+            </a>
+            <nav class="header__nav">
+                <div class="header__nav--body">
+                    <div class="header__nav--search header__search">
+                        <form action="#" class="header__search--form">
+                            <label class="header__search--label">
+                                <input type="text" name="search" placeholder="Поиск" class="header__search--input _input">
+                            </label>
+                            <button class="header__search--submit _icon-search" title="Search" type="submit"></button>
+                        </form>
+                    </div>
+                    <ul class="header__nav--list">
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link">
+                                Пользователи
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link">
+                                Модерация
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="#" class="header__nav--link">
+                                Статистика
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="add-coin.html" class="header__nav--link">
+                                Add Coin
+                            </a>
+                        </li>
+                        <li class="header__nav--item">
+                            <a href="add-nft.html" class="header__nav--link">
+                                Add NFT
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="header__nav--account header__account _drop-down">
+                        <div class="header__account--current header__lang--item">
+                            <button class="header__account--current-btn _drop-down-current">
+                                Admin
+                            </button>
+                        </div>
+                        <ul class="header__account--list _drop-down-list">
+                            <li class="header__account--item">
+                                <a href="profile.html" class="header__account--link">
+                                    My Profile
+                                </a>
+                            </li>
+                            <li class="header__account--item">
+                                <a href="portfolio.html" class="header__account--link">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li class="header__account--item">
+                                <a href="login.html" class="header__account--link">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__nav--theme header__theme">
+                        <button type="button" class="header__theme--btn _icon-dark-theme _light-theme _btn _min _theme-btn" title="Change theme"></button>
+                        <script>
+                            if(localStorage.getItem('theme') == 'dark') {
+                                let themeBtn = document.querySelector('._theme-btn');
+                    
+                                if(themeBtn) {
+                                    themeBtn.classList.remove('_light-theme');
+                                    themeBtn.classList.remove('_icon-dark-theme');
+                                    themeBtn.classList.add('_dark-theme');
+                                    themeBtn.classList.add('_icon-light-theme');
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+            </nav>
+            <button class="header__burger _burger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+
+<div class="wrapper">
+    <section class="nft-open">
+        <div class="nft-open__container _container">
+            <div class="nft-open__menu moderation-menu ">
+    <ul class="moderation-menu__list">
+        <li class="moderation-menu__item">
+            <a href="#" class="moderation-menu__item--body _active">
+                NFT
+                <span class="moderation-menu__item--status _available _1"></span>
+            </a>
+        </li>
+        <li class="moderation-menu__item">
+            <a href="#" class="moderation-menu__item--body ">
+                Токены
+                <span class="moderation-menu__item--status _available _2"></span>
+            </a>
+        </li>
+        <li class="moderation-menu__item">
+            <a href="#" class="moderation-menu__item--body ">
+                Жалобы
+                <span class="moderation-menu__item--status _available _3"></span>
+            </a>
+        </li>
+        <li class="moderation-menu__item _navigation">
+            <a href="#" class="moderation-menu__navigation--arrow _icon-list-arrow" title="Назад"></a>
+            <a href="#" class="moderation-menu__navigation--arrow _icon-list-arrow" title="Вперёд"></a>
+        </li>
+    </ul>
+    <!-- <div class="moderation-menu__navigation">
+        
+    </div> -->
+</div>
+            <div class="nft-open__content coin-content _section-pt">
+                <div class="nft-open__nft nft-image _min-pt">
+                    <div class="nft-image__picture">
+                        <picture>
+                            <source srcset="img/nft-open-page/image.webp" type="image/webp">
+                            <img src="img/nft-open-page/image.jpg" loading="lazy" alt="" width="308" height="308" class="nft-image__img">
+                        </picture>
+                    </div>
+                    <form action="#" class="nft-image__settings coin-settings">
+                        <label class="coin-settings__label _col">
+                            <button class="coin-settings__submit _icon-check" type="submit"></button>
+                        </label>
+                        <label class="coin-settings__label _col">
+                            <button class="coin-settings__reset _icon-close" type="reset"></button>
+                        </label>
+                        <label class="coin-settings__label">
+                            <button class="coin-settings__btn _btn" type="button">
+                                <span class="coin-settings__btn--icon _icon-revision"></span>
+                                На доработку
+                            </button>
+                        </label>
+                    </form>
+                </div>
+                <div class="nft-open__info coin-info">
+                    <div class="nft-open__header coin-header _section-pb">
+                        <div class="nft-open__header--col coin-header-col">
+                            <div class="nft-open__header--row coin-header-row _start _min-pt">
+                                <h2 class="coin-name _section-title">
+                                    Basic Bats
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="nft-open__header--col coin-header-col">
+                            <form action="#" class="open-coin__votes coin-votes _min-pt">
+                                <label class="coin-votes__value _votes _votes-label _checkbox-label _column">
+                                    <input type="checkbox" name="vote" class="coin-votes__value--input _votes-input _checkbox-input">
+                                    <span class="coin-votes__icon _votes-icon _icon-up-arrow"></span>
+                                    11111
+                                </label>
+                            </form>
+                        </div>
+                        <div class="nft-open__header--row coin-header-row _start _min-pt">
+                            <div class="nft-open__header--social coin-social">
+                                <ul class="coin-social__list">
+                                    <li class="coin-social__item">
+                                        <a href="#" class="coin-social__link _btn _gray" title="Site">
+                                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M0.38603 10.9901H4.73387C4.91462 10.9901 5.06214 10.8473 5.07016 10.6667C5.11872 9.58029 5.2263 8.51983 5.38961 7.50311C5.42237 7.29893 5.26417 7.11438 5.05745 7.11438H1.22969C1.09347 7.11438 0.971686 7.19693 0.918577 7.32236C0.481092 8.35493 0.183998 9.46075 0.0510608 10.6159C0.028092 10.8152 0.185311 10.9901 0.38603 10.9901Z"/>                                                    <path d="M2.82761 5.09468H5.64596C5.79676 5.09468 5.93026 4.99531 5.97146 4.85028C6.28234 3.7549 6.69901 2.63351 7.24178 1.61619C7.39426 1.33034 7.0899 1.01534 6.79796 1.15597C5.14197 1.95364 3.69545 3.11942 2.56534 4.54686C2.38984 4.76857 2.54481 5.09468 2.82761 5.09468Z"/>
+                                                <path d="M8.46313 5.09467H15.5372C15.7673 5.09467 15.9292 4.86874 15.8564 4.65035C13.7894 -1.54794 10.2124 -1.55229 8.14396 4.65035C8.07117 4.86864 8.23298 5.09467 8.46313 5.09467Z"/>
+                                                <path d="M16.5706 13.0099H7.42947C7.23672 13.0099 7.08377 13.1716 7.09305 13.364C7.14879 14.5167 7.27404 15.6023 7.45469 16.6071C7.48366 16.7681 7.62288 16.8856 7.78638 16.8856H16.2137C16.3772 16.8856 16.5164 16.7681 16.5453 16.6071C16.7261 15.6023 16.8513 14.5167 16.907 13.364C16.9163 13.1716 16.7634 13.0099 16.5706 13.0099Z"/>
+                                                <path d="M5.38969 16.4969C5.22638 15.4802 5.1188 14.4197 5.07024 13.3333C5.06218 13.1527 4.91471 13.0099 4.73396 13.0099H0.386068C0.185303 13.0099 0.0281308 13.1847 0.0510527 13.3842C0.184037 14.5393 0.481131 15.6451 0.918568 16.6777C0.971678 16.8031 1.09346 16.8857 1.22968 16.8857H5.05744C5.2643 16.8856 5.42251 16.701 5.38969 16.4969Z"/>
+                                                <path d="M7.42955 10.9901H16.5707C16.7635 10.9901 16.9164 10.8284 16.9071 10.6359C16.8514 9.48329 16.7261 8.39771 16.5455 7.39285C16.5165 7.23188 16.3773 7.11441 16.2138 7.11441H7.78651C7.62296 7.11441 7.48374 7.23188 7.45482 7.39285C7.27412 8.39771 7.14891 9.48333 7.09318 10.6359C7.08385 10.8284 7.2368 10.9901 7.42955 10.9901Z"/>
+                                                <path d="M18.0287 4.85023C18.0699 4.99526 18.2034 5.09464 18.3542 5.09464H21.1726C21.4553 5.09464 21.6103 4.76853 21.4348 4.54681C20.3048 3.11932 18.8582 1.95359 17.2022 1.15592C16.9102 1.01534 16.6059 1.33029 16.7583 1.61614C17.3009 2.63314 17.7176 3.75439 18.0287 4.85023Z"/>
+                                                <path d="M18.6106 7.5031C18.774 8.51982 18.8815 9.58032 18.9301 10.6667C18.9382 10.8473 19.0856 10.9901 19.2664 10.9901H23.6143C23.815 10.9901 23.9722 10.8153 23.9493 10.6158C23.8163 9.46069 23.5192 8.35491 23.0818 7.3223C23.0287 7.19687 22.9069 7.11432 22.7707 7.11432H18.9429C18.736 7.11437 18.5778 7.29891 18.6106 7.5031Z"/>
+                                                <path d="M23.6141 13.0099H19.2662C19.0855 13.0099 18.938 13.1527 18.93 13.3333C18.8814 14.4198 18.7738 15.4802 18.6105 16.4969C18.5777 16.7011 18.736 16.8856 18.9427 16.8856H22.7704C22.9067 16.8856 23.0284 16.8031 23.0815 16.6776C23.519 15.6451 23.8161 14.5392 23.9491 13.3841C23.9721 13.1847 23.815 13.0099 23.6141 13.0099Z"/>
+                                                <path d="M21.1726 18.9053H18.3542C18.2034 18.9053 18.0699 19.0047 18.0287 19.1497C17.7178 20.245 17.3011 21.3665 16.7584 22.3838C16.6058 22.6696 16.9103 22.9846 17.2022 22.844C18.8582 22.0464 20.3048 20.8806 21.4348 19.4531C21.6103 19.2314 21.4553 18.9053 21.1726 18.9053Z"/>
+                                                <path d="M5.97142 19.1497C5.93022 19.0046 5.79672 18.9053 5.64592 18.9053H2.82756C2.54481 18.9053 2.38984 19.2314 2.56534 19.4531C3.69536 20.8806 5.14187 22.0464 6.79797 22.844C7.08986 22.9846 7.39426 22.6696 7.24178 22.3838C6.6992 21.3668 6.28244 20.2453 5.97142 19.1497Z"/>
+                                                <path d="M15.5372 18.9053H8.46314C8.23293 18.9053 8.07117 19.1312 8.14397 19.3496C10.2109 25.5479 13.7879 25.5523 15.8564 19.3496C15.9292 19.1312 15.7673 18.9053 15.5372 18.9053Z"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="coin-social__item">
+                                        <a href="#" class="coin-social__link _btn _gray" title="Telegram">
+                                            <svg width="21" height="18" viewBox="0 0 21 18">
+                                                <path d="M18.6651 0.717064L0.935095 7.55406C-0.274905 8.04006 -0.267905 8.71506 0.713095 9.01606L5.26509 10.4361L15.7971 3.79106C16.2951 3.48806 16.7501 3.65106 16.3761 3.98306L7.8431 11.6841H7.84109L7.8431 11.6851L7.5291 16.3771C7.9891 16.3771 8.19209 16.1661 8.45009 15.9171L10.6611 13.7671L15.2601 17.1641C16.1081 17.6311 16.7171 17.3911 16.9281 16.3791L19.9471 2.15106C20.2561 0.912064 19.4741 0.351064 18.6651 0.717064Z"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="coin-social__item">
+                                        <a href="#" class="coin-social__link _btn _gray" title="Twitter">
+                                            <svg width="24" height="20" viewBox="0 0 24 20">
+                                                <path d="M23.4559 2.44298C23.0789 2.61021 22.6912 2.75134 22.2951 2.86593C22.7641 2.3356 23.1216 1.7116 23.3398 1.02876C23.3888 0.875706 23.3381 0.70817 23.2122 0.608067C23.0866 0.507887 22.912 0.495887 22.7737 0.577874C21.9325 1.07676 21.025 1.43529 20.0734 1.64494C19.1149 0.708325 17.813 0.175293 16.4672 0.175293C13.6263 0.175293 11.315 2.48649 11.315 5.32732C11.315 5.55106 11.3292 5.77356 11.3572 5.99297C7.8319 5.68345 4.5545 3.95073 2.30393 1.19003C2.22372 1.09163 2.10016 1.0386 1.97365 1.04874C1.84707 1.05865 1.73335 1.13003 1.6694 1.23973C1.21293 2.02298 0.971617 2.9188 0.971617 3.83026C0.971617 5.07168 1.41484 6.24954 2.19778 7.1699C1.95972 7.08745 1.7287 6.9844 1.50821 6.862C1.38984 6.79612 1.24537 6.79713 1.12777 6.86456C1.01009 6.93199 0.936314 7.05602 0.933217 7.19158C0.932675 7.21442 0.932675 7.23726 0.932675 7.2604C0.932675 9.11344 1.92999 10.7817 3.45476 11.691C3.32377 11.678 3.19285 11.659 3.06279 11.6341C2.9287 11.6085 2.79082 11.6555 2.70039 11.7578C2.60981 11.86 2.57985 12.0024 2.62158 12.1325C3.18596 13.8945 4.63905 15.1906 6.39569 15.5858C4.93874 16.4983 3.2726 16.9763 1.52354 16.9763C1.15858 16.9763 0.791539 16.9549 0.432314 16.9124C0.253862 16.8911 0.0832303 16.9965 0.0224561 17.1662C-0.038318 17.336 0.0260948 17.5253 0.177914 17.6226C2.42485 19.0633 5.02297 19.8248 7.69123 19.8248C12.9367 19.8248 16.2181 17.3512 18.0471 15.2762C20.3279 12.6887 21.636 9.26394 21.636 5.88002C21.636 5.73865 21.6338 5.59589 21.6295 5.45359C22.5293 4.77563 23.3041 3.95514 23.9345 3.01209C24.0303 2.86887 24.0199 2.67958 23.9089 2.54773C23.7982 2.41581 23.6135 2.37315 23.4559 2.44298Z"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="coin-social__item">
+                                        <a href="#" class="coin-social__link _btn _gray" title="Code">
+                                            <svg width="24" height="20" viewBox="0 0 24 20">
+                                                <path d="M10.4587 19.5812L8.1712 18.9175C7.9312 18.85 7.7962 18.5987 7.8637 18.3587L12.9824 0.726223C13.0499 0.486223 13.3012 0.351223 13.5412 0.418723L15.8287 1.08247C16.0687 1.14997 16.2037 1.40122 16.1362 1.64122L11.0174 19.2737C10.9462 19.5137 10.6987 19.6525 10.4587 19.5812ZM6.1837 15.3737L7.81495 13.6337C7.98745 13.45 7.9762 13.1575 7.78495 12.9887L4.38745 9.99998L7.78495 7.01123C7.9762 6.84248 7.9912 6.54998 7.81495 6.36623L6.1837 4.62622C6.01495 4.44622 5.72995 4.43497 5.5462 4.60747L0.142461 9.66998C-0.048789 9.84623 -0.048789 10.15 0.142461 10.3262L5.5462 15.3925C5.72995 15.565 6.01495 15.5575 6.1837 15.3737ZM18.4537 15.3962L23.8574 10.33C24.0487 10.1537 24.0487 9.84998 23.8574 9.67373L18.4537 4.60372C18.2737 4.43497 17.9887 4.44247 17.8162 4.62247L16.1849 6.36248C16.0124 6.54623 16.0237 6.83873 16.2149 7.00748L19.6124 9.99998L16.2149 12.9887C16.0237 13.1575 16.0087 13.45 16.1849 13.6337L17.8162 15.3737C17.9849 15.5575 18.2699 15.565 18.4537 15.3962Z"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nft-open__header--row coin-header-row _min-pt">
+                            <div class="nft-open__header--price coin-price _min-pt">
+                                <span class="coin-price__legend coin-min-legend">
+                                    Floor Price
+                                </span>
+                                <strong class="coin-price__value _fw-semibold">0.08 ETH</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nft-open__descr _section-pt _border-top">
+                        Basic Bats is a character collection of 6000 ERC-721 NFTs paired with a play-to-earn NFT based mobile game. The Basic Bats mobile game is nearing completion and will soon be available and free to play on iOS and Android devices. These NFTs have not used generative AI and are completely drawn and curated by hand. The team behind this project is not anonymous and is fully transparent with its community regarding the present and future of Basic Bats. We believe that you shouldn’t need a million followers to make money playing video games and that this project can be a first step to on-boarding the general public into the play to earn potential in the crypto/NFT space. Owning a Basic Bat NFT will allow you to play the mobile game with YOUR character, 3D rendered and playable, as well as giving you access to the competitive community leaderboard. We will be rewarding the top 5 players on the Basic Bats community leaderboard EVERY WEEK with a split of $1000 in ETH.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <footer class="footer">
+        <div class="footer__container _container">
+            <a href="index.html" class="footer__logo">
+                <img src="img/light-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__light">
+                <img src="img/dark-logo.svg" width="187" loading="lazy" alt="" class="footer__logo--img logo__dark">
+            </a>
+            <nav class="footer__nav">
+                <ul class="footer__nav--list">
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Disclaimer
+                        </a>
+                    </li>
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Terms & conditions
+                        </a>
+                    </li>
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li class="footer__nav--item">
+                        <a href="#" class="footer__nav--link">
+                            Coins Index
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__nav--social-list">
+                    <li class="footer__nav--social-item">
+                        <a href="#" class="footer__nav--social-link _btn _gray" title="Telegram">
+                            <svg viewBox="0 0 21 18">
+                                <path d="M18.6651 0.717064L0.935095 7.55406C-0.274905 8.04006 -0.267905 8.71506 0.713095 9.01606L5.26509 10.4361L15.7971 3.79106C16.2951 3.48806 16.7501 3.65106 16.3761 3.98306L7.8431 11.6841H7.84109L7.8431 11.6851L7.5291 16.3771C7.9891 16.3771 8.19209 16.1661 8.45009 15.9171L10.6611 13.7671L15.2601 17.1641C16.1081 17.6311 16.7171 17.3911 16.9281 16.3791L19.9471 2.15106C20.2561 0.912064 19.4741 0.351064 18.6651 0.717064Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__nav--social-item">
+                        <a href="#" class="footer__nav--social-link _btn _gray" title="Twitter">
+                            <svg viewBox="0 0 24 20">
+                                <path d="M23.4559 2.44298C23.0789 2.61021 22.6912 2.75134 22.2951 2.86593C22.7641 2.3356 23.1216 1.7116 23.3398 1.02876C23.3888 0.875706 23.3381 0.70817 23.2122 0.608067C23.0866 0.507887 22.912 0.495887 22.7737 0.577874C21.9325 1.07676 21.025 1.43529 20.0734 1.64494C19.1149 0.708325 17.813 0.175293 16.4672 0.175293C13.6263 0.175293 11.315 2.48649 11.315 5.32732C11.315 5.55106 11.3292 5.77356 11.3572 5.99297C7.8319 5.68345 4.5545 3.95073 2.30393 1.19003C2.22372 1.09163 2.10016 1.0386 1.97365 1.04874C1.84707 1.05865 1.73335 1.13003 1.6694 1.23973C1.21293 2.02298 0.971617 2.9188 0.971617 3.83026C0.971617 5.07168 1.41484 6.24954 2.19778 7.1699C1.95972 7.08745 1.7287 6.9844 1.50821 6.862C1.38984 6.79612 1.24537 6.79713 1.12777 6.86456C1.01009 6.93199 0.936314 7.05602 0.933217 7.19158C0.932675 7.21442 0.932675 7.23726 0.932675 7.2604C0.932675 9.11344 1.92999 10.7817 3.45476 11.691C3.32377 11.678 3.19285 11.659 3.06279 11.6341C2.9287 11.6085 2.79082 11.6555 2.70039 11.7578C2.60981 11.86 2.57985 12.0024 2.62158 12.1325C3.18596 13.8945 4.63905 15.1906 6.39569 15.5858C4.93874 16.4983 3.2726 16.9763 1.52354 16.9763C1.15858 16.9763 0.791539 16.9549 0.432314 16.9124C0.253862 16.8911 0.0832303 16.9965 0.0224561 17.1662C-0.038318 17.336 0.0260948 17.5253 0.177914 17.6226C2.42485 19.0633 5.02297 19.8248 7.69123 19.8248C12.9367 19.8248 16.2181 17.3512 18.0471 15.2762C20.3279 12.6887 21.636 9.26394 21.636 5.88002C21.636 5.73865 21.6338 5.59589 21.6295 5.45359C22.5293 4.77563 23.3041 3.95514 23.9345 3.01209C24.0303 2.86887 24.0199 2.67958 23.9089 2.54773C23.7982 2.41581 23.6135 2.37315 23.4559 2.44298Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__copy">
+                CoinX © 2022 - <a href="mailto:contact@coinx.com" class="footer__copy--link">contact@coinx.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+</html>

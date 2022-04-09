@@ -52,7 +52,9 @@ select.forEach(thisElement => {
   NiceSelect.bind(thisElement, {
     searchable: false
   });
+  
 })
+
 // =-=-=-=-=-=-=-=-=-=-=-=- </custome select> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
@@ -185,6 +187,41 @@ body.addEventListener('click', function (event) {
   }
   // =-=-=-=-=-=-=-=-=-=-=-=- </copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- <copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+
+  let niceSelect = thisTarget.closest('.nice-select');
+  if(niceSelect) {
+
+    document.querySelectorAll('.nice-select').forEach(thisElement => {
+      let list = thisElement.querySelector('.list');
+      list.classList.remove('_active');
+    })
+
+    let list = niceSelect.querySelector('.list');
+        list.classList.add('_active');
+
+    if(!niceSelect.classList.contains('open')) {
+      
+      setTimeout(() => {
+        list.classList.remove('_active');
+        list.classList.add('_hidden');
+      },500)
+    }
+  } else {
+    document.querySelectorAll('.nice-select').forEach(thisElement => {
+      let list = thisElement.querySelector('.list');
+
+      setTimeout(() => {
+        list.classList.remove('_active');
+        list.classList.add('_hidden');
+      },500)
+    })
+  }
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- </copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+
 })
 
 
@@ -243,3 +280,85 @@ function scrollPage() {
 scrollPage();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </change header on scroll> -=-=-=-=-=-=-=-=-=-=-=-=
+
+/* let resizeCheck = {}, windowSize;
+
+function resizeCheckFunc(size, minWidth, maxWidth) {
+  if (windowSize <= size && (resizeCheck[String(size)] == true || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != false) {
+    resizeCheck[String(size)] = false;
+    maxWidth(); // < size
+  }
+
+  if (windowSize >= size && (resizeCheck[String(size)] == false || resizeCheck[String(size)] == undefined) && resizeCheck[String(size)] != true) {
+    resizeCheck[String(size)] = true;
+    minWidth(); // > size
+  }
+} */
+
+const wrapper = document.querySelector('.wrapper');
+
+function resize() {
+
+  wrapper.style.setProperty('--header-height', header.offsetHeight + 'px');
+
+  /* windowSize = window.innerWidth
+
+  resizeCheckFunc(992,
+    function () {  // screen > 992px
+
+
+
+  },
+  function () {  // screen < 992px
+
+
+
+  }); */
+
+}
+
+resize();
+
+window.onresize = resize;
+
+
+let changeSelect = document.querySelectorAll('._change-select');
+
+
+changeSelect.forEach(thisElement => {
+
+  function changeSelect(eventTarget) {
+    let thisSelect  = eventTarget,
+        parent      = thisSelect.closest('._change-select-parent'),
+        option      = thisSelect.querySelector(`option[value="${thisSelect.value}"]`),
+        optionBg    = (option) ? option.dataset.typeBg : false,
+        optionTheme = (option) ? option.dataset.typeTheme : false;
+  
+        
+    if(option && optionTheme) {
+      parent.classList.remove('_dark');
+      parent.classList.remove('_light');
+  
+      if(optionTheme == 'dark') {
+        parent.classList.add('_dark');
+      } else if(optionTheme == 'light') {
+        parent.classList.add('_light');
+      }
+  
+      parent.style.setProperty('--bg', (optionBg) ? optionBg : '');
+  
+    }
+  }  
+
+  changeSelect(thisElement)
+
+  thisElement.addEventListener('change', function(event) {
+    
+    changeSelect(event.target)  
+  
+  })
+
+})
+
+
+
