@@ -2549,6 +2549,27 @@ input[type=date]::-webkit-inner-spin-button {
   background-color: var(--light);
 }
 
+.header__nav--link._active {
+  background-color: var(--light);
+}
+
+.header__nav--link._available {
+  position: relative;
+}
+
+.header__nav--link._available::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  -webkit-transform: translate(25%, -25%);
+          transform: translate(25%, -25%);
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
 .header__nav--link:active {
   background-color: var(--dark);
   color: var(--light);
