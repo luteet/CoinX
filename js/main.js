@@ -189,7 +189,7 @@ body.addEventListener('click', function (event) {
 
 
 
-  // =-=-=-=-=-=-=-=-=-=-=-=- <copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+  // =-=-=-=-=-=-=-=-=-=-=-=- <change color on select> -=-=-=-=-=-=-=-=-=-=-=-=
 
   let niceSelect = thisTarget.closest('.nice-select');
   if(niceSelect) {
@@ -220,7 +220,28 @@ body.addEventListener('click', function (event) {
     })
   }
 
-  // =-=-=-=-=-=-=-=-=-=-=-=- </copy text from input> -=-=-=-=-=-=-=-=-=-=-=-=
+  // =-=-=-=-=-=-=-=-=-=-=-=- </change color on select> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- <edit input btn> -=-=-=-=-=-=-=-=-=-=-=-=
+
+  let editInputBtn = thisTarget.closest('._edit-mode-btn');
+  if(editInputBtn) {
+    event.preventDefault();
+    
+    let parent  = editInputBtn.closest('._edit-mode'),
+        input   = (parent) ? parent.querySelector('._edit-mode-input') : false;
+
+    if(input) {
+      input.removeAttribute('readonly');
+    }
+
+  }
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- </edit input btn> -=-=-=-=-=-=-=-=-=-=-=-=
+
+  
 
 })
 
@@ -247,25 +268,28 @@ function scrollPage() {
   function scrollPageFunc() {
     top[0] = getCoords(offsetCheckJs).top;
 
-    if (top[0] >= 300 && top[1] == false) {
+    if (top[0] >= 500 && top[1] == false) {
 
       top[1] = true;
       header.style.setProperty('--pos', '-100%');
+      header.style.setProperty('opacity', '0');
 
       setTimeout(function () {
         header.classList.add('_active');
         header.style.setProperty('--pos', '0%');
+        header.style.setProperty('opacity', '1');
       }, 200);
 
     } else if (top[0] <= 300 && top[1] == true) {
 
       top[1] = false;
       header.style.setProperty('--pos', '-100%');
+      header.style.setProperty('opacity', '0');
 
       setTimeout(function () {
         header.style.setProperty('--pos', '0%');
         header.classList.remove('_active');
-
+        header.style.setProperty('opacity', '1');
       }, 200);
 
     }
