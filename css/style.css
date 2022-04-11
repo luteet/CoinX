@@ -1916,6 +1916,9 @@ input[type=date]::-webkit-inner-spin-button {
   background-color: var(--dark-gray);
   -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+  /* &:hover {
+      color: var(--light);
+  } */
 }
 
 ._form-btn-reset {
