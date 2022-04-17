@@ -795,7 +795,7 @@ template {
 
 @font-face {
   font-family: "CoinX-icons";
-  src: url("CoinX-icons.ttf?m49323") format("truetype"), url("CoinX-icons.woff?m49323") format("woff"), url("CoinX-icons.svg?m49323#CoinX-icons") format("svg");
+  src: url("CoinX-icons.ttf?dnjbj1") format("truetype"), url("CoinX-icons.woff?dnjbj1") format("woff"), url("CoinX-icons.svg?dnjbj1#CoinX-icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -814,6 +814,14 @@ template {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-circle::before {
+  content: "\e912";
+}
+
+._icon-plus::before {
+  content: "\e913";
 }
 
 ._icon-check::before {
@@ -1279,6 +1287,99 @@ a {
   background-color: var(--purple);
   border-radius: var(--br);
   padding: 3px 7px;
+}
+
+.promote-elem {
+  position: relative;
+  width: 100%;
+  /* &__btn._active &__start-span {
+      display: none;
+  }
+
+  &__btn._active &__active-span {
+      display: flex;
+  }
+
+
+  &__start-span, &__active-span {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  &__active-span {
+      display: none;
+  } */
+}
+
+.promote-elem__input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.promote-elem__btn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--light);
+  color: var(--dark-gray);
+  padding: 9px 22px;
+  border-radius: var(--br);
+  -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.promote-elem__btn:hover {
+  color: var(--white);
+  background-color: var(--accent);
+}
+
+.promote-elem__btn._active {
+  color: var(--white);
+  background-color: var(--accent-2);
+}
+
+.promote-elem__start-span,
+.promote-elem__active-span {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1/1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.promote-elem__active-span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.promote-elem__btn._active .promote-elem__start-span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.promote-elem__btn._active .promote-elem__active-span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.promote-elem__icon {
+  padding-left: 15px;
 }
 
 ._main-title {
@@ -4180,6 +4281,182 @@ input[type=date]::-webkit-inner-spin-button {
   padding-right: 15px;
 }
 
+.crypto-menu {
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -10px;
+}
+
+.crypto-menu > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.crypto-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.crypto-menu__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  padding: 10px;
+}
+
+.crypto-menu__item--body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 135%;
+  color: var(--dark-gray);
+  border: 1px solid var(--light);
+  background-color: transparent;
+  padding: 12px 16px;
+  border-radius: var(--br);
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.crypto-menu__item--body:hover,
+.crypto-menu__item--body._active {
+  color: var(--light);
+  background-color: var(--dark-gray);
+}
+
+.crypto-menu__item--icon {
+  font-size: 18px;
+}
+
+.crypto-menu__add-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.crypto-menu__add-list .crypto-menu__item--body:hover,
+.crypto-menu__add-list .crypto-menu__item--body._active {
+  color: var(--white);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.crypto-tokens__table-block {
+  padding: 40px 0 34px 0;
+}
+
+.crypto-tokens__table-block--wrapper {
+  overflow: auto;
+}
+
+.crypto-tokens__table {
+  width: 100%;
+  min-width: 825px;
+  color: var(--dark-gray);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-spacing: 0;
+}
+
+.crypto-tokens__table td {
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+
+.crypto-tokens__table tr:hover td {
+  background-color: var(--light);
+}
+
+.crypto-tokens__table tr td:first-child {
+  padding-left: 15px;
+  border-radius: var(--br-2) 0 0 var(--br-2);
+}
+
+.crypto-tokens__table tr td:last-child {
+  padding-right: 15px;
+  border-radius: 0 var(--br-2) var(--br-2) 0;
+}
+
+.crypto-tokens__table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.crypto-tokens__footer {
+  padding-top: 40px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.crypto-nft {
+  /* &__item--body:hover &__promote--btn {
+      background-color: var(--accent);
+      color: var(--white);
+  } */
+}
+
+.crypto-nft__list {
+  padding-top: 23px;
+  padding-bottom: 40px;
+}
+
+.crypto-nft__item {
+  /* width: 100%; */
+}
+
+.crypto-nft__item--body {
+  width: 100%;
+}
+
+.crypto-nft__item--avatar {
+  margin: 0 auto;
+  /* max-width: 100%; */
+}
+
+.crypto-nft__promote {
+  padding: 18px 5px 19px 5px;
+}
+
+.crypto-nft__promote--btn {
+  font-size: 0.75rem;
+  padding: 6px 9px;
+  border: 1px solid var(--page-bg);
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.crypto-nft__promote--btn._active {
+  border: 1px solid var(--accent-2);
+}
+
+.crypto-nft__footer {
+  padding-top: 40px;
+}
+
 .comments__list {
   padding-top: 10px;
 }
@@ -4644,6 +4921,10 @@ input[type=date]::-webkit-inner-spin-button {
             flex: 0 1 33.333%;
   }
 
+  .crypto-nft__promote--btn {
+    padding: 9px 12px;
+  }
+
   .footer__nav--list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -4679,6 +4960,12 @@ input[type=date]::-webkit-inner-spin-button {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     margin: 0;
+  }
+
+  .crypto-menu > * {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
   }
 
   .comments__user {
@@ -4927,6 +5214,11 @@ input[type=date]::-webkit-inner-spin-button {
 
   .moderation-complaints__table {
     font-size: 1.125rem;
+  }
+
+  .crypto-tokens__table {
+    min-width: 900px;
+    font-size: 1rem;
   }
 
   .comments__item--user {
@@ -5232,6 +5524,43 @@ input[type=date]::-webkit-inner-spin-button {
             flex: 0 1 200px;
   }
 
+  .crypto-menu {
+    margin: -15px;
+  }
+
+  .crypto-menu__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    padding: 15px;
+  }
+
+  .crypto-menu__item--body {
+    padding: 7.5px 16px;
+  }
+
+  .crypto-tokens__header {
+    padding: 0 15px;
+  }
+
+  .crypto-tokens__table-block {
+    padding: 40px 15px 34px 15px;
+  }
+
+  .crypto-tokens__table {
+    min-width: 1000px;
+    font-size: 1.125rem;
+  }
+
+  .crypto-nft__promote {
+    padding: 18px 19px 19px 19px;
+  }
+
+  .crypto-nft__promote--btn {
+    font-size: 0.875rem;
+    padding: 9px 22px;
+  }
+
   .comments__write-message--textarea {
     padding: 25px 28px;
   }
@@ -5310,6 +5639,12 @@ input[type=date]::-webkit-inner-spin-button {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 24%;
             flex: 0 1 24%;
+  }
+
+  .crypto-menu__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.333%;
+            flex: 0 1 33.333%;
   }
 
   .comments__item--user {

@@ -58,6 +58,22 @@ select.forEach(thisElement => {
 // =-=-=-=-=-=-=-=-=-=-=-=- </custome select> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <promote-elem init> -=-=-=-=-=-=-=-=-=-=-=-=
+
+let promoteInput = document.querySelectorAll('.promote-elem__input');
+
+promoteInput.forEach(thisPromoteInput => {
+  if(thisPromoteInput.checked) {
+    let parent = thisPromoteInput.parentElement;
+    parent.classList.add('_active');
+  }
+})
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </promote-elem init> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
 const body = document.querySelector('body'),
   html = document.querySelector('html'),
   menu = document.querySelectorAll('._burger, .header__nav, body'),
@@ -241,9 +257,35 @@ body.addEventListener('click', function (event) {
 
   // =-=-=-=-=-=-=-=-=-=-=-=- </edit input btn> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- </edit input btn> -=-=-=-=-=-=-=-=-=-=-=-=
+
+  let promoteBtn = thisTarget.closest('.promote-elem__btn');
+  if(promoteBtn) {
+    event.preventDefault();
+    let input = promoteBtn.querySelector('.promote-elem__input');
+
+    if(input) {
+
+      input.checked = !input.checked;
+      console.log('click');
+      if(input.checked) {
+        promoteBtn.classList.add('_active');
+      } else {
+        promoteBtn.classList.remove('_active');
+      }
+
+    }
+  }
+
+  // =-=-=-=-=-=-=-=-=-=-=-=- </edit input btn> -=-=-=-=-=-=-=-=-=-=-=-=
   
 
 })
+
+
+
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <change header on scroll> -=-=-=-=-=-=-=-=-=-=-=-=
