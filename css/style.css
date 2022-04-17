@@ -1331,8 +1331,9 @@ a {
   color: var(--dark-gray);
   padding: 9px 22px;
   border-radius: var(--br);
-  -webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: 1px solid var(--page-bg);
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .promote-elem__btn:hover {
@@ -1342,6 +1343,7 @@ a {
 
 .promote-elem__btn._active {
   color: var(--white);
+  border: 1px solid var(--accent-2);
   background-color: var(--accent-2);
 }
 
@@ -4444,13 +4446,6 @@ input[type=date]::-webkit-inner-spin-button {
 .crypto-nft__promote--btn {
   font-size: 0.75rem;
   padding: 6px 9px;
-  border: 1px solid var(--page-bg);
-  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
-}
-
-.crypto-nft__promote--btn._active {
-  border: 1px solid var(--accent-2);
 }
 
 .crypto-nft__footer {
