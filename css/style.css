@@ -746,6 +746,7 @@ template {
   --dark: #24252D;
   --dark-hover: #24252D;
   --light: #F3F5F7;
+  --only-light: #F3F5F7;
   --dark-gray: #758393;
   --page-bg: #FFFFFF;
   --white: #FFF;
@@ -1074,6 +1075,12 @@ a {
   border-radius: 7px;
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  /* &._alt-accent {
+      background-color: var(--purple);
+      &:hover {
+
+      }
+  } */
 }
 
 ._btn._gray {
@@ -3316,6 +3323,248 @@ input[type=date]::-webkit-inner-spin-button {
   font-size: 0.75rem;
 }
 
+.coin-presale-info {
+  padding-top: 30px;
+  /* &__btn {
+  } */
+}
+
+.coin-presale-info__header {
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 135%;
+  text-align: center;
+  color: var(--only-light);
+  background-color: var(--purple);
+  padding: 10px;
+  border-radius: var(--br);
+}
+
+.coin-presale-info__timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 25px;
+  margin: -11px;
+}
+
+.coin-presale-info__timer--item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 22px);
+          flex: 0 1 calc(50% - 22px);
+  min-height: 50px;
+  min-width: 60px;
+  margin: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: var(--light);
+  color: var(--dark-gray);
+  cursor: default;
+  border-radius: var(--br);
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.coin-presale-info__timer--item._active {
+  color: var(--white);
+  background-color: var(--accent);
+}
+
+.coin-presale-info__timer--value {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 135%;
+}
+
+.coin-presale-info__timer--name {
+  font-weight: 600;
+  font-size: 0.5rem;
+  line-height: 135%;
+}
+
+.coin-presale-info__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 11px;
+  margin: -10px -14px;
+}
+
+.coin-presale-info__price--item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 10px 14px;
+  text-align: center;
+  color: var(--dark-gray);
+}
+
+.coin-presale-info__price--item._large {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.coin-presale-info__price--name {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 135%;
+}
+
+.coin-presale-info__price--item-body {
+  margin-top: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 135%;
+  padding: 14px 15px;
+  border-radius: var(--br);
+  background-color: var(--light);
+}
+
+.coin-presale-info__price--item._large .coin-presale-info__price--item-body {
+  position: relative;
+}
+
+.coin-presale-info__price--item._large .coin-presale-info__price--item-body::before {
+  content: "=";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.coin-presale-info__price--value {
+  width: 100%;
+}
+
+.coin-presale-info__price--item._large .coin-presale-info__price--value {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
+}
+
+.coin-presale-info__price--btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 28px);
+          flex: 0 1 calc(50% - 28px);
+  margin: 10px 14px;
+  padding: 14px 16px;
+  border: 2px solid var(--light);
+  border-radius: var(--br-2);
+  color: var(--dark-gray);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 135%;
+  -webkit-transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.coin-presale-info__price--btn:hover {
+  color: var(--only-light);
+  background-color: var(--dark-gray);
+  border-color: var(--dark-gray);
+}
+
+.coin-presale-info__status {
+  padding: 10px 14px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  text-align: center;
+}
+
+.coin-presale-info__status--name {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 135%;
+  color: var(--dark-gray);
+}
+
+.coin-presale-info__status--name b {
+  color: var(--dark);
+}
+
+.coin-presale-info__status--line {
+  width: 100%;
+  height: 20px;
+  margin-top: 3px;
+}
+
+.coin-presale-info__status--line::-webkit-progress-bar {
+  border-radius: 10em;
+  background-color: var(--light);
+}
+
+.coin-presale-info__status--line::-webkit-progress-value {
+  border-radius: 10em;
+  background-color: var(--accent);
+}
+
+.coin-presale-info__large-btn,
+.coin-presale-info__large-btn._gray {
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 135%;
+  text-align: center;
+  padding: 17px;
+  margin-top: 20px;
+  border-radius: var(--br-2);
+}
+
+.coin-presale-info__tokens-claim {
+  margin-top: 20px;
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 135%;
+  text-align: center;
+}
+
+.coin-presale-info__tokens-claim--name {
+  color: var(--dark-gray);
+}
+
+.coin-presale-info__tokens-claim--value {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .open-coin__descr {
   color: var(--dark-gray);
   font-weight: 600;
@@ -4500,6 +4749,10 @@ input[type=date]::-webkit-inner-spin-button {
   padding-top: 40px;
 }
 
+.comments {
+  padding-top: 35px;
+}
+
 .comments__list {
   padding-top: 10px;
 }
@@ -4938,6 +5191,12 @@ input[type=date]::-webkit-inner-spin-button {
     font-size: 0.875rem;
   }
 
+  .coin-presale-info__timer--item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+
   .login__block {
     padding: 240px 0 100px 0;
   }
@@ -5367,6 +5626,7 @@ input[type=date]::-webkit-inner-spin-button {
     /* transform: translate(0, var(--pos)); */
     position: absolute;
     padding: 0;
+    opacity: var(--opacity);
   }
 
   .header._active {
@@ -5379,7 +5639,7 @@ input[type=date]::-webkit-inner-spin-button {
   }
 
   .header._active .header__nav--body {
-    padding: 10px 0;
+    padding: 0;
   }
 
   .header__nav {
@@ -5602,6 +5862,10 @@ input[type=date]::-webkit-inner-spin-button {
   .crypto-nft__promote--btn {
     font-size: 0.875rem;
     padding: 9px 22px;
+  }
+
+  .comments {
+    padding-top: 0;
   }
 
   .comments__write-message--textarea {

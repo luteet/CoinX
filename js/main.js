@@ -310,28 +310,28 @@ function scrollPage() {
   function scrollPageFunc() {
     top[0] = getCoords(offsetCheckJs).top;
 
-    if (top[0] >= 500 && top[1] == false) {
+    if (top[0] >= 200 && top[1] == false) {
 
       top[1] = true;
       header.style.setProperty('--pos', '-100%');
-      header.style.setProperty('opacity', '0');
+      header.style.setProperty('--opacity', '0');
 
       setTimeout(function () {
         header.classList.add('_active');
         header.style.setProperty('--pos', '0%');
-        header.style.setProperty('opacity', '1');
+        header.style.setProperty('--opacity', '1');
       }, 200);
 
-    } else if (top[0] <= 300 && top[1] == true) {
+    } else if (top[0] <= 100 && top[1] == true) {
 
       top[1] = false;
       header.style.setProperty('--pos', '-100%');
-      header.style.setProperty('opacity', '0');
+      header.style.setProperty('--opacity', '0');
 
       setTimeout(function () {
         header.style.setProperty('--pos', '0%');
         header.classList.remove('_active');
-        header.style.setProperty('opacity', '1');
+        header.style.setProperty('--opacity', '1');
       }, 200);
 
     }
@@ -398,4 +398,65 @@ changeSelect.forEach(thisElement => {
 
 })
 
+
+function timer() {
+
+  const timerElems = document.querySelectorAll('._timer');
+
+  let deadline;
+
+  timerElems.forEach(timerElem => {
+
+    deadline = new Date(
+
+      timerElem.getAttribute('data-timer-year'),
+      timerElem.getAttribute('data-timer-month') - 1,
+      timerElem.getAttribute('data-timer-day'),
+      timerElem.getAttribute('data-timer-hour'),
+      timerElem.getAttribute('data-timer-minute'));
+
+      let timerDays = timerElem.querySelector('._timer-days'),
+      timerHours = timerElem.querySelector('._timer-hours'),
+      timerMinutes = timerElem.querySelector('._timer-minutes'),
+      timerSeconds = timerElem.querySelector('._timer-seconds');
+  
+      setInterval(() => {
+
+        const diff = deadline - new Date(),
+  
+          days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0,
+          hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0,
+          seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0,
+          minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+  
+          timerDays.textContent = days;
+          timerHours.textContent = hours;
+          timerMinutes.textContent = minutes;
+          timerSeconds.textContent = seconds;
+
+          if(days) {
+            timerDays.parentElement.classList.add('_active');
+          } 
+          else if(hours) {
+            timerDays.parentElement.classList.remove('_active');
+            timerHours.parentElement.classList.add('_active');
+          }
+          else if(minutes) {
+            timerHours.parentElement.classList.remove('_active');
+            timerMinutes.parentElement.classList.add('_active');
+          }
+          else if(seconds) {
+            timerMinutes.parentElement.classList.remove('_active');
+            timerSeconds.parentElement.classList.add('_active');
+          }
+  
+      }, 1000);
+
+  });
+
+  
+
+}
+
+timer();
 
