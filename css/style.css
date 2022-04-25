@@ -1134,20 +1134,20 @@ a {
 
 ._btn:hover._gray._status-color-1 {
   background-color: var(--light);
-  color: var(--white);
-  fill: var(--white);
+  color: var(--dark);
+  fill: var(--dark);
 }
 
 ._btn:hover._gray._status-color-2 {
   background-color: var(--light);
-  color: var(--white);
-  fill: var(--white);
+  color: var(--dark);
+  fill: var(--dark);
 }
 
 ._btn:hover._gray._status-color-3 {
   background-color: var(--light);
-  color: var(--white);
-  fill: var(--white);
+  color: var(--dark);
+  fill: var(--dark);
 }
 
 ._btn:active._status-color-1 {
